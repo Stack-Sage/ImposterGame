@@ -3,31 +3,34 @@
 @tailwind utilities;
 
 body {
-  background: #000;
-  color: #fff;
+  background: linear-gradient(135deg, #1e293b 0%, #38bdf8 100%);
+  color: #f3f8ff;
   font-family: 'Poppins', 'Orbitron', ui-sans-serif, system-ui;
   min-height: 100vh;
 }
 
 .neon-text {
-  text-shadow: 0 0 8px #00bfff, 0 0 2px #38bdf8;
+  text-shadow: 0 0 8px #38bdf8, 0 0 2px #7dd3fc;
+  color: #e0f2fe;
 }
 
 .glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,191,255,0.02));
-  border: 1px solid #00bfff33;
+  background: linear-gradient(120deg, rgba(56,189,248,0.12), rgba(125,211,252,0.10));
+  border: 1px solid #38bdf844;
   backdrop-filter: blur(8px);
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 .h1 {
   font-size: clamp(2rem, 6vw, 3rem);
   font-family: 'Orbitron', 'Poppins', ui-sans-serif;
+  color: #e0f2fe;
 }
 
 .h2 {
   font-size: clamp(1.2rem, 4vw, 2rem);
   font-family: 'Orbitron', 'Poppins', ui-sans-serif;
+  color: #bae6fd;
 }
 
 input, button, textarea {
@@ -35,15 +38,15 @@ input, button, textarea {
 }
 
 input:focus, button:focus, textarea:focus {
-  box-shadow: 0 0 0 2px #00bfff99;
-  border-color: #00bfff;
+  box-shadow: 0 0 0 2px #38bdf8cc;
+  border-color: #38bdf8;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background: #222;
+  background: #e0f2fe;
 }
 ::-webkit-scrollbar-thumb {
-  background: #00bfff44;
+  background: #38bdf888;
   border-radius: 8px;
 }

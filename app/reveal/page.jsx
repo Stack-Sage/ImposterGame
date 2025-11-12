@@ -18,15 +18,15 @@ export default function RevealPage() {
   if (!imp) return <div className="glass p-8 text-center text-lg">No round data</div>;
 
   return (
-    <div className="flex justify-center w-full min-h-screen items-center">
+    <div className="min-h-screen flex items-center justify-center w-full">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass p-10 flex flex-col gap-10 items-center justify-center w-full max-w-xl mx-auto bg-gradient-to-br from-sky-950/60 via-cyan-950/60 to-blue-950/60"
+        className="glass p-10 flex flex-col gap-10 items-center justify-center mx-2 md:mx-10 w-full max-w-lg rounded-3xl shadow-xl bg-gradient-to-br from-sky-100/40 via-cyan-200/40 to-blue-200/40"
       >
         <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale:1, opacity:1 }} className="text-center">
           <h2 className="h2 font-extrabold text-cyan-100 mb-6">Imposter Revealed</h2>
-          <div className="mt-4 p-8 rounded-3xl bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40 border-4 border-cyan-700/20 shadow-lg">
+          <div className="mt-4 p-8 rounded-3xl bg-gradient-to-r from-sky-100/30 via-cyan-100/30 to-blue-100/30 border-4 border-cyan-700/20 shadow-lg">
             <div className="text-2xl text-cyan-200 mb-2 font-bold">The imposter was</div>
             <div className="mt-2 text-4xl font-bold text-cyan-100">{imp.name}</div>
             <div className="mt-4 text-2xl text-cyan-300 font-bold">Prompt: <span className="font-semibold text-cyan-100">{imp.prompt}</span></div>

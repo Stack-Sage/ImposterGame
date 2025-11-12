@@ -25,9 +25,12 @@ export default function VotePanel({ players, onVote }) {
           <button
             key={i}
             onClick={() => setSelected(p)}
-            className={`glass p-6 rounded-2xl font-bold text-2xl transition-all w-full ${selected === p ? "border-4 border-cyan-400 bg-cyan-900/30 scale-105 animate-pulse text-cyan-100" : "border border-cyan-700/20 text-cyan-300"} bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40`}
+            className={`glass p-6 rounded-2xl font-bold text-2xl transition-all w-full flex flex-col items-center justify-center
+              ${selected === p ? "border-4 border-cyan-400 bg-cyan-900/30 scale-105 animate-pulse text-cyan-100" : "border border-cyan-700/20 text-cyan-300"}
+              bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40`}
           >
-            {p}
+            <span className="truncate">{p}</span>
+            {selected === p && <span className="mt-2 text-cyan-400 text-base font-bold">Selected</span>}
           </button>
         ))}
       </div>

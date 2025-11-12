@@ -86,22 +86,22 @@ export default function PlayPage() {
   const player = list[index];
 
   return (
-    <div className="flex justify-center w-full min-h-screen items-center">
+    <div className="min-h-screen flex items-center justify-center w-full">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass p-10 flex flex-col gap-10 items-center justify-center w-full max-w-xl mx-auto bg-gradient-to-br from-sky-950/60 via-cyan-950/60 to-blue-950/60"
+        className="glass p-10 flex flex-col gap-10 items-center justify-center mx-2 md:mx-10 w-full max-w-lg rounded-3xl shadow-xl bg-gradient-to-br from-sky-100/40 via-cyan-200/40 to-blue-200/40"
       >
         <h2 className="h2 font-bold text-cyan-100 text-center mb-2">Pass & Play</h2>
         <div className="w-full max-w-xl flex flex-col items-center">
-          <div className="glass p-10 rounded-3xl flex flex-col gap-8 w-full items-center bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40">
+          <div className="glass p-8 rounded-3xl flex flex-col gap-8 w-full items-center bg-gradient-to-r from-sky-100/30 via-cyan-100/30 to-blue-100/30 shadow-lg">
             <div className="text-2xl text-cyan-200 text-center font-bold">Turn <span className="font-bold">{index + 1}</span> of <span className="font-bold">{list.length}</span></div>
             {showPass ? (
               <PassScreen player={player.name} onContinue={() => setShowPass(false)} />
             ) : (
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center gap-8 w-full">
                 <div className="text-2xl text-cyan-300 mb-2 font-bold">Secret for <span className="font-bold text-cyan-100">{player.name}</span></div>
-                <div className="h-32 w-full flex items-center justify-center rounded-3xl bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40 border-4 border-cyan-700/20 shadow-lg">
+                <div className="h-32 w-full flex items-center justify-center rounded-3xl bg-gradient-to-r from-sky-100/30 via-cyan-100/30 to-blue-100/30 border-4 border-cyan-700/20 shadow-lg">
                   <div className="text-center w-full">
                     <div className="mt-2 text-3xl font-bold text-cyan-100">{revealed ? player.prompt : "Tap reveal"}</div>
                   </div>

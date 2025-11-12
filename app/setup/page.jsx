@@ -44,18 +44,18 @@ export default function SetupPage() {
   }
 
   return (
-    <div className="flex justify-center w-full min-h-screen items-center">
+    <div className="min-h-screen flex items-center justify-center w-full">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass p-8 flex flex-col gap-8 items-center justify-center w-full max-w-lg mx-auto"
+        className="glass p-10 flex flex-col gap-10 items-center justify-center w-full max-w-lg mx-2 md:mx-10 rounded-3xl shadow-xl"
       >
         <h2 className="h2 font-bold neon-text text-center mb-2">Add Players</h2>
-        <div className="flex gap-6 w-full justify-center">
+        <div className="flex flex-col sm:flex-row gap-6 w-full justify-center">
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="flex-1 p-5 rounded-3xl bg-black/40 border border-sky-400/20 neon-text text-xl focus:outline-none focus:ring-4 focus:ring-sky-400"
+            className="flex-1 p-5 rounded-3xl bg-white/10 border border-sky-400/30 neon-text text-xl focus:outline-none focus:ring-4 focus:ring-sky-400"
             placeholder="Player name"
             maxLength={20}
           />
