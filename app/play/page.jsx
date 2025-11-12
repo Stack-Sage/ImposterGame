@@ -60,18 +60,17 @@ export default function PlayPage() {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass p-16 flex flex-col gap-16 space-y-10 items-center w-full max-w-xl mx-auto mt-16 mb-12"
-      style={{ minHeight: "80vh" }}
+      className="p-8 flex flex-col gap-8 items-center w-full max-w-md mx-auto mt-4 mb-4 rounded-xl shadow"
     >
-      <h2 className="h2 neon-text font-bold mb-4">Pass & Play</h2>
-      <div className="text-cyan-300 text-center mb-6 font-semibold text-3xl">
+      <h2 className="text-2xl font-bold mb-2 text-cyan-400">Pass & Play</h2>
+      <div className="text-cyan-300 text-center mb-4 font-semibold text-3xl">
         {mode === "word"
           ? "Guess the common word. Imposter has a different or odd word!"
           : "Answer the question. Imposter has a secret or odd question!"}
       </div>
-      <div className="w-full max-w-md mb-12">
-        <div className="glass p-12 rounded-lg flex flex-col gap-12 space-y-8">
-          <div className="text-sm text-sky-200/60 mb-2">Turn {index + 1} of {list.length}</div>
+      <div className="w-full max-w-md mb-4">
+        <div className="p-4 rounded bg-gray-900 flex flex-col gap-4">
+          <div className="text-xs text-sky-200/60 mb-1">Turn {index + 1} of {list.length}</div>
           {showPass ? (
             <PassScreen player={player.name} onContinue={() => setShowPass(false)} />
           ) : (

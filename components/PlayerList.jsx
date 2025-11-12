@@ -11,32 +11,33 @@ export default function PlayerList({ players, onRemove }) {
 
   if (!Array.isArray(players)) {
     return (
-      <div className="text-red-400 text-xl text-center py-8 font-bold">
+      <div className="text-red-400 text-base text-center py-4 font-bold">
         Error loading players.
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col gap-12 space-y-8 mt-10 mb-10 w-full">
+    <div className="flex flex-col gap-4 sm:gap-8 mt-4 sm:mt-6 mb-4 sm:mb-6 w-full text-cyan-100">
       {players.length === 0 && (
-        <div className="text-sky-400 text-xl text-center py-8 font-bold mb-4">
+        <div className="text-sky-300 text-lg sm:text-xl text-center py-4 sm:py-6 font-bold mb-2">
           No players yet
         </div>
       )}
       {players.map((p, i) => (
         <div
           key={i}
-          className="glass px-12 py-10 rounded-2xl flex flex-row items-center justify-between bg-gradient-to-r from-sky-900/60 via-cyan-900/60 to-blue-900/60 hover:scale-105 hover:shadow-lg transition-all text-xl font-bold text-sky-100 mb-4"
+          className="px-4 sm:px-8 py-4 sm:py-6 rounded-xl flex flex-row items-center justify-between bg-gradient-to-r from-sky-900/60 via-cyan-900/60 to-blue-900/60 hover:scale-105 hover:shadow transition-all text-lg sm:text-xl font-bold mb-2"
         >
           <div className="flex-1 min-w-0 truncate">{p}</div>
           <button
             onClick={() => handleRemove(i)}
-            className="p-4 rounded-md hover:bg-cyan-800/40 focus:outline-none focus:ring-2 focus:ring-sky-400 ml-6 text-gray-900 text-xl"
+            className="p-2 sm:p-4 rounded hover:bg-pink-700/40 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400 ml-2 sm:ml-4 text-cyan-100 text-lg sm:text-xl active:scale-95 transition"
             aria-label={`Remove ${p}`}
             tabIndex={0}
           >
-            <FiX size={32} className="text-gray-900" />
+            <FiX size={20} className="sm:hidden text-cyan-100" />
+            <FiX size={28} className="hidden sm:inline text-cyan-100" />
           </button>
         </div>
       ))}

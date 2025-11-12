@@ -22,21 +22,20 @@ export default function RevealPage() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass p-16 flex flex-col gap-16 space-y-10 items-center justify-center mx-2 md:mx-10 w-full max-w-lg rounded-3xl shadow-xl bg-gradient-to-br from-sky-100/40 via-cyan-200/40 to-blue-200/40"
-        style={{ minHeight: "80vh" }}
+        className="w-screen sm:max-w-md mx-1 sm:mx-auto p-4 sm:p-8 flex flex-col gap-4 sm:gap-8 items-center justify-center rounded-xl shadow bg-gradient-to-br from-sky-100/40 via-cyan-200/40 to-blue-200/40"
       >
         <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale:1, opacity:1 }} className="text-center">
-          <h2 className="h2 font-extrabold text-cyan-100 mb-6">Imposter Revealed</h2>
-          <div className="mt-4 p-8 rounded-3xl bg-gradient-to-r from-sky-100/30 via-cyan-100/30 to-blue-100/30 border-4 border-cyan-700/20 shadow-lg">
-            <div className="text-2xl text-cyan-200 mb-2 font-bold">The imposter was</div>
-            <div className="mt-2 text-4xl font-bold text-cyan-100">{imp.name}</div>
-            <div className="mt-4 text-2xl text-cyan-300 font-bold">Prompt: <span className="font-semibold text-cyan-100">{imp.prompt}</span></div>
+          <h2 className="text-xl sm:text-2xl font-bold text-cyan-400 mb-1 sm:mb-2">Imposter Revealed</h2>
+          <div className="mt-1 sm:mt-2 p-2 sm:p-4 rounded-xl bg-gradient-to-r from-sky-100/30 via-cyan-100/30 to-blue-100/30 border border-cyan-700/20 shadow">
+            <div className="text-base sm:text-xl text-cyan-200 mb-0.5 sm:mb-1 font-bold">The imposter was</div>
+            <div className="mt-0.5 sm:mt-1 text-xl sm:text-2xl font-bold text-cyan-100">{imp.name}</div>
+            <div className="mt-1 sm:mt-2 text-base sm:text-xl text-cyan-300 font-bold">Prompt: <span className="font-semibold text-cyan-100">{imp.prompt}</span></div>
           </div>
         </motion.div>
         <RevealConfetti />
-        <div className="flex gap-10 mt-12 justify-center">
+        <div className="flex gap-2 sm:gap-4 mt-2 sm:mt-4 justify-center">
           <NeonButton onClick={() => { window.location.href = "/setup"; }}>
-            <span className="text-gray-900 text-xl">Play Again</span>
+            <span className="text-gray-900 text-base sm:text-xl">Play Again</span>
           </NeonButton>
         </div>
       </motion.div>

@@ -17,6 +17,9 @@ export const WORDS = [
   "Inception", "Dangal", "Avengers", "Titanic", "Friends", "Stranger Things", "Money Heist", "Squid Game", "Bahubali", "3 Idiots",
   // Misc
   "Rainbow", "Diamond", "Castle", "Robot", "Spaceship", "Dragon", "Mountain", "River", "Forest", "Desert",
+  // Creative additions
+  "Time Machine", "Invisible Cloak", "Magic Wand", "Portal Gun", "Flying Carpet", "Talking Cat", "Quantum Computer", "Dreamcatcher", "Parallel Universe", "Superpower",
+  "Alien Spaceship", "Haunted House", "Secret Door", "Treasure Map", "Lost City", "Crystal Ball", "Teleportation Device", "Mini Black Hole", "Giant Marshmallow", "Dancing Shoes",
   // ...add hundreds/thousands more as needed...
 ];
 
@@ -49,6 +52,17 @@ export const QUESTIONS = [
   "What's your favorite holiday destination?",
   "What's your favorite dessert?",
   "What's your favorite superhero?",
+  // Creative additions
+  "If you could have any superpower, what would it be?",
+  "If you could time travel, where would you go?",
+  "If you could invent anything, what would it be?",
+  "If you could swap lives with anyone for a day, who would it be?",
+  "What's the weirdest dream you've ever had?",
+  "If you could live in any fictional world, which one?",
+  "What's the most adventurous thing you've done?",
+  "If you could talk to animals, which animal would you talk to first?",
+  "If you found a secret door in your house, where would you want it to lead?",
+  "If you could eat only one food forever, what would it be?",
   // ...add hundreds/thousands more as needed...
 ];
 
