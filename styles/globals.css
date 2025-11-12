@@ -27,6 +27,7 @@ body {
   color: var(--cyan);
   font-family: 'Poppins', 'Orbitron', ui-sans-serif, system-ui;
   min-height: 100vh;
+  font-size: 1.5rem; /* Tailwind's text-2xl is 1.5rem */
 }
 
 .neon-text {
@@ -45,7 +46,7 @@ body {
 .h1 {
   font-size: clamp(2.2rem, 6vw, 3.2rem);
   font-family: 'Orbitron', 'Poppins', ui-sans-serif;
-  color: var(--cyan);
+  color: var(--color-cyan-500);
   text-shadow: 0 0 18px #22d3eeaa, 0 0 4px #f9a8d499;
   letter-spacing: 0.04em;
 }
@@ -54,13 +55,13 @@ body {
   font-size: clamp(1.4rem, 4vw, 2.2rem);
   font-family: 'Orbitron', 'Poppins', ui-sans-serif;
   color: var(--sky);
-  text-shadow: 0 0 8px #38bdf888;
+  text-shadow: 0 0 8px #00b3ff88;
   letter-spacing: 0.03em;
 }
 
 input, button, textarea {
   outline: none;
-  color: var(--cyan);
+  color: var(--card-border);
 }
 
 input {
@@ -81,7 +82,7 @@ button {
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  color: var(--cyan);
+  color: var(--card-border);
 }
 
 ::-webkit-scrollbar {

@@ -73,11 +73,11 @@ export default function SetupPage() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass p-14 flex flex-col gap-16 items-center justify-center w-full max-w-lg mx-2 md:mx-10 rounded-3xl shadow-xl"
+        className="glass p-16 flex flex-col gap-16 space-y-10 items-center justify-center w-full max-w-lg mx-2 md:mx-10 rounded-3xl shadow-xl"
         style={{ minHeight: "80vh" }}
       >
         <h2 className="h2 font-bold neon-text text-center mb-8">Add Players</h2>
-        <div className="flex flex-col sm:flex-row gap-10 w-full justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-12 space-y-6 w-full justify-center mb-12">
           <input
             value={name}
             onChange={(e) => { setName(e.target.value); setError(""); }}
@@ -94,10 +94,10 @@ export default function SetupPage() {
         {error && (
           <div className="text-lg text-red-400 font-bold text-center mt-4 mb-4">{error}</div>
         )}
-        <div className="w-full mt-10 mb-10">
+        <div className="w-full mt-14 mb-14">
           <PlayerList players={players} onRemove={remove} />
         </div>
-        <div className="mt-16 flex justify-center w-full">
+        <div className="mt-20 flex justify-center w-full">
           <NeonButton onClick={startRound}>
             <span className="text-gray-900 text-xl">Start Round</span>
           </NeonButton>

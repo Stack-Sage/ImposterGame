@@ -60,17 +60,17 @@ export default function PlayPage() {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass p-10 flex flex-col gap-12 items-center w-full max-w-xl mx-auto mt-12 mb-8"
+      className="glass p-16 flex flex-col gap-16 space-y-10 items-center w-full max-w-xl mx-auto mt-16 mb-12"
       style={{ minHeight: "80vh" }}
     >
       <h2 className="h2 neon-text font-bold mb-4">Pass & Play</h2>
-      <div className="text-cyan-300 text-center mb-6 font-semibold">
+      <div className="text-cyan-300 text-center mb-6 font-semibold text-3xl">
         {mode === "word"
           ? "Guess the common word. Imposter has a different or odd word!"
           : "Answer the question. Imposter has a secret or odd question!"}
       </div>
-      <div className="w-full max-w-md mb-8">
-        <div className="glass p-8 rounded-lg flex flex-col gap-10">
+      <div className="w-full max-w-md mb-12">
+        <div className="glass p-12 rounded-lg flex flex-col gap-12 space-y-8">
           <div className="text-sm text-sky-200/60 mb-2">Turn {index + 1} of {list.length}</div>
           {showPass ? (
             <PassScreen player={player.name} onContinue={() => setShowPass(false)} />
@@ -85,16 +85,16 @@ export default function PlayPage() {
               {!revealed ? (
                 <NeonButton
                   onClick={() => setRevealed(true)}
-                  className="bg-gradient-to-r from-gray-800 to-gray-900 text-gray-100 rounded-md text-xl font-bold px-6 py-3 shadow-lg hover:scale-105 active:scale-95 transition-all"
+                  className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-md text-3xl font-bold px-6 py-3 shadow-lg hover:scale-105 active:scale-95 transition-all"
                 >
-                  Reveal
+                  <span className="text-black text-3xl" style={{ color: "#111" }}>Reveal</span>
                 </NeonButton>
               ) : (
                 <NeonButton
                   onClick={next}
-                  className="bg-gradient-to-r from-gray-800 to-gray-900 text-gray-100 rounded-md text-xl font-bold px-6 py-3 shadow-lg hover:scale-105 active:scale-95 transition-all"
+                  className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-md text-3xl font-bold px-6 py-3 shadow-lg hover:scale-105 active:scale-95 transition-all"
                 >
-                  Done
+                  <span className="text-black text-3xl" style={{ color: "#111" }}>Done</span>
                 </NeonButton>
               )}
             </motion.div>

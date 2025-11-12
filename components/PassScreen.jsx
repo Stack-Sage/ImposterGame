@@ -12,7 +12,7 @@ export default function PassScreen({ player, onContinue }) {
     <motion.div
       initial={{ opacity:0, scale:0.95 }}
       animate={{ opacity:1, scale:1 }}
-      className="flex flex-col items-center gap-12 py-16 mb-4"
+      className="flex flex-col items-center gap-14 space-y-8 py-20 mb-8"
     >
       <div className="text-2xl text-cyan-200 font-bold">Pass the device to</div>
       <div className="text-4xl font-extrabold text-cyan-100 mb-2 animate-pulse">{player}</div>

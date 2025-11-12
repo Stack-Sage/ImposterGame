@@ -10,9 +10,9 @@ export default function VotePanel({ players, onVote }) {
   }
 
   return (
-    <div className="flex flex-col gap-14 mt-14 mb-8 items-center w-full">
+    <div className="flex flex-col gap-16 space-y-10 mt-16 mb-12 items-center w-full">
       <div className="text-2xl text-cyan-300 mb-6 text-center font-bold">Who is the imposter?</div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 w-full mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-14 space-x-8 w-full mb-12">
         {players.map((p, i) => (
           <button
             key={i}

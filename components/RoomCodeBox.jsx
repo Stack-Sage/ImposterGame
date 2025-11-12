@@ -20,7 +20,7 @@ export default function RoomCodeBox({ code }) {
     );
   }
   return (
-    <div className="relative glass p-10 rounded-2xl flex items-center gap-12 justify-center text-cyan-100 text-4xl mb-12 border-2 border-cyan-400/30 bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40">
+    <div className="relative glass p-14 rounded-2xl flex items-center gap-16 justify-center text-cyan-100 text-4xl mb-16 border-2 border-cyan-400/30 bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40">
       <span className="font-mono tracking-widest text-4xl">{code}</span>
       <button onClick={copy} className="ml-4 p-4 rounded-full hover:bg-cyan-800/30 transition focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-900">
         <FiCopy size={32} />

@@ -3,11 +3,11 @@ import React from "react";
 
 export default function AnswerList({ answers }) {
   return (
-    <div className="flex flex-col gap-12 mt-12 mb-8 w-full">
+    <div className="flex flex-col gap-16 space-y-10 mt-16 mb-12 w-full">
       {answers.map((ans, i) => (
         <div
           key={i}
-          className="glass p-10 rounded-2xl flex flex-row items-center justify-between hover:shadow-lg transition-all text-2xl border-2 border-cyan-700/20 bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40 mb-4"
+          className="glass p-14 rounded-2xl flex flex-row items-center justify-between hover:shadow-lg transition-all text-2xl border-2 border-cyan-700/20 bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40 mb-8"
         >
           <div className="flex flex-col flex-1 min-w-0 gap-2">
             <span className="font-bold text-cyan-100 text-lg mb-1 truncate">Player</span>

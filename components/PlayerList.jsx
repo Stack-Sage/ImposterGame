@@ -18,7 +18,7 @@ export default function PlayerList({ players, onRemove }) {
   }
 
   return (
-    <div className="flex flex-col gap-10 mt-6 mb-6 w-full">
+    <div className="flex flex-col gap-12 space-y-8 mt-10 mb-10 w-full">
       {players.length === 0 && (
         <div className="text-sky-400 text-xl text-center py-8 font-bold mb-4">
           No players yet
@@ -27,7 +27,7 @@ export default function PlayerList({ players, onRemove }) {
       {players.map((p, i) => (
         <div
           key={i}
-          className="glass px-10 py-8 rounded-2xl flex flex-row items-center justify-between bg-gradient-to-r from-sky-900/60 via-cyan-900/60 to-blue-900/60 hover:scale-105 hover:shadow-lg transition-all text-xl font-bold text-sky-100 mb-2"
+          className="glass px-12 py-10 rounded-2xl flex flex-row items-center justify-between bg-gradient-to-r from-sky-900/60 via-cyan-900/60 to-blue-900/60 hover:scale-105 hover:shadow-lg transition-all text-xl font-bold text-sky-100 mb-4"
         >
           <div className="flex-1 min-w-0 truncate">{p}</div>
           <button
