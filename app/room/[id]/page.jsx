@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
-import RoomCodeBox from "../../components/RoomCodeBox";
-import PlayerCard from "../../components/PlayerCard";
-import NeonButton from "../../components/NeonButton";
-import PhaseWrapper from "../../components/PhaseWrapper";
+
+import PlayerCard from "@/components/PlayerCard";
+import NeonButton from "@/components/NeonButton";
+import PhaseWrapper from "@/components/PhaseWrapper";
+import RoomCodeBox from "@/components/RoomCodeBox";
 
 export default function RoomPage({ params }) {
   const roomId = params?.id;

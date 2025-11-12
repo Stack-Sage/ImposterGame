@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-export default function PlayerCard({ name, score, avatarUrl }) {
+export default function PlayerCard({ name, score }) {
   const displayName = name || "Unknown";
   return (
     <div className="glass flex flex-row items-center gap-8 p-8 rounded-2xl shadow-md hover:scale-105 transition-transform w-full bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40">
