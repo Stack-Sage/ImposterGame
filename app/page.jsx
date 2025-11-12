@@ -21,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-[#00111f] to-[#001a33] px-1 sm:px-2 text-cyan-200 overflow-x-hidden">
       {/* Glass Card */}
       <motion.div
-        className="w-screen sm:max-w-md mx-1 sm:mx-auto bg-[#021420]/70 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-4 sm:p-8 shadow flex flex-col items-center gap-4 sm:gap-8 my-4 sm:my-8 text-white"
+        className="w-screen md:max-w-2xl lg:max-w-3xl mx-1 sm:mx-auto bg-[#021420]/70 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-4 sm:p-8 shadow flex flex-col items-center gap-4 sm:gap-8 my-4 sm:my-8 text-white"
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-2 sm:gap-4 text-center mb-2 sm:mb-4">

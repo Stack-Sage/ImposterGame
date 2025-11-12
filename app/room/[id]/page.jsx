@@ -26,7 +26,7 @@ export default function RoomPage({ params }) {
 
   return (
     <PhaseWrapper>
-      <div className="w-screen sm:max-w-md mx-1 sm:mx-auto flex flex-col items-center gap-2 sm:gap-4">
+      <div className="w-screen md:max-w-2xl lg:max-w-3xl mx-1 sm:mx-auto flex flex-col items-center gap-2 sm:gap-4">
         <RoomCodeBox code={roomId} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 w-full">
           {players.map((p, i) => (

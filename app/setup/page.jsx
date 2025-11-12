@@ -73,7 +73,7 @@ export default function SetupPage() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-screen sm:max-w-md mx-1 sm:mx-auto p-4 sm:p-8 flex flex-col gap-4 sm:gap-8 items-center justify-center rounded-xl shadow"
+        className="w-screen md:max-w-2xl lg:max-w-3xl mx-1 sm:mx-auto p-4 sm:p-8 flex flex-col gap-4 sm:gap-8 items-center justify-center rounded-xl shadow"
       >
         <h2 className="text-xl sm:text-2xl font-bold text-center mb-2 sm:mb-4 text-cyan-400">Add Players</h2>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full justify-center mb-2 sm:mb-4">

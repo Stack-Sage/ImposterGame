@@ -22,7 +22,7 @@ export default function RevealPage() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-screen sm:max-w-md mx-1 sm:mx-auto p-4 sm:p-8 flex flex-col gap-4 sm:gap-8 items-center justify-center rounded-xl shadow bg-gradient-to-br from-sky-100/40 via-cyan-200/40 to-blue-200/40"
+        className="w-screen md:max-w-2xl lg:max-w-3xl mx-1 sm:mx-auto p-4 sm:p-8 flex flex-col gap-4 sm:gap-8 items-center justify-center rounded-xl shadow bg-gradient-to-br from-sky-100/40 via-cyan-200/40 to-blue-200/40"
       >
         <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale:1, opacity:1 }} className="text-center">
           <h2 className="text-xl sm:text-2xl font-bold text-cyan-400 mb-1 sm:mb-2">Imposter Revealed</h2>
