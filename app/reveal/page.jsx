@@ -21,14 +21,14 @@ export default function RevealPage() {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass p-10 flex flex-col gap-10 items-center justify-center max-w-2xl mx-auto"
+      className="glass p-10 flex flex-col gap-10 items-center justify-center max-w-2xl mx-auto bg-gradient-to-br from-sky-950/60 via-cyan-950/60 to-blue-950/60"
     >
       <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale:1, opacity:1 }} className="text-center">
-        <h2 className="h2 neon-text font-extrabold mb-6">Imposter Revealed</h2>
-        <div className="mt-4 p-8 rounded-3xl bg-black/70 border-4 border-sky-500/20 shadow-neon">
-          <div className="text-2xl text-sky-200/80 mb-2">The imposter was</div>
-          <div className="mt-2 text-4xl font-bold neon-text">{imp.name}</div>
-          <div className="mt-4 text-2xl text-sky-100/80">Prompt: <span className="font-semibold neon-text">{imp.prompt}</span></div>
+        <h2 className="h2 font-extrabold text-cyan-100 mb-6">Imposter Revealed</h2>
+        <div className="mt-4 p-8 rounded-3xl bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40 border-4 border-cyan-700/20 shadow-lg">
+          <div className="text-2xl text-cyan-200 mb-2 font-bold">The imposter was</div>
+          <div className="mt-2 text-4xl font-bold text-cyan-100">{imp.name}</div>
+          <div className="mt-4 text-2xl text-cyan-300 font-bold">Prompt: <span className="font-semibold text-cyan-100">{imp.prompt}</span></div>
         </div>
       </motion.div>
       <RevealConfetti />
