@@ -12,7 +12,17 @@ export default function PlayerList({ players, onRemove }) {
       audioRef.current.currentTime = 0;
       audioRef.current.play();
     }
-    onRemove(i);
+    try {
+      onRemove(i);
+    } catch {}
+  }
+
+  if (!Array.isArray(players)) {
+    return (
+      <div className="text-red-400 text-xl text-center py-8 font-bold">
+        Error loading players.
+      </div>
+    );
   }
 
   return (

@@ -6,9 +6,11 @@ export default function RoomCodeBox({ code }) {
   const [copied, setCopied] = useState(false);
   function copy() {
     if (!code) return;
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1200);
+    try {
+      navigator.clipboard.writeText(code);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1200);
+    } catch {}
   }
   if (!code) {
     return (

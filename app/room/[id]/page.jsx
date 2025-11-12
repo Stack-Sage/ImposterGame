@@ -6,19 +6,18 @@ import NeonButton from "../../components/NeonButton";
 import PhaseWrapper from "../../components/PhaseWrapper";
 
 export default function RoomPage({ params }) {
-  const roomId = params.id;
-  // Placeholder state, replace with real-time logic
+  const roomId = params?.id;
   const [players] = useState([
     { name: "Alice", score: 2 },
     { name: "Bob", score: 1 },
     { name: "Charlie", score: 0 }
   ]);
 
-  if (!roomId) {
+  if (!roomId || typeof roomId !== "string" || roomId.length < 4) {
     return (
       <PhaseWrapper>
         <div className="glass p-8 rounded-2xl text-center text-2xl text-red-400 font-bold">
-          Room code not found. Please check your link.
+          Room code not found or invalid. Please check your link.
         </div>
       </PhaseWrapper>
     );

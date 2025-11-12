@@ -12,12 +12,18 @@ export default function SetupPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const saved = typeof window !== "undefined" && localStorage.getItem("players");
-    if (saved) setPlayers(JSON.parse(saved));
+    try {
+      const saved = typeof window !== "undefined" && localStorage.getItem("players");
+      if (saved) setPlayers(JSON.parse(saved));
+    } catch {
+      setPlayers([]);
+    }
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") localStorage.setItem("players", JSON.stringify(players));
+    try {
+      if (typeof window !== "undefined") localStorage.setItem("players", JSON.stringify(players));
+    } catch {}
   }, [players]);
 
   function add() {
@@ -28,6 +34,10 @@ export default function SetupPage() {
     }
     if (players.includes(trimmed)) {
       setError("Player name already exists.");
+      return;
+    }
+    if (trimmed.length > 20) {
+      setError("Player name too long.");
       return;
     }
     setPlayers((p) => [...p, trimmed]);
@@ -44,14 +54,18 @@ export default function SetupPage() {
       return;
     }
     setError("");
-    const mode = localStorage.getItem("mode") || "word";
-    localStorage.setItem("gameState", JSON.stringify({
-      players,
-      mode,
-      round: 1,
-      scores: players.map(() => 0)
-    }));
-    router.push("/play");
+    try {
+      const mode = localStorage.getItem("mode") || "word";
+      localStorage.setItem("gameState", JSON.stringify({
+        players,
+        mode,
+        round: 1,
+        scores: players.map(() => 0)
+      }));
+      router.push("/play");
+    } catch {
+      setError("Failed to start round. Try again.");
+    }
   }
 
   return (
@@ -70,6 +84,7 @@ export default function SetupPage() {
             placeholder="Player name"
             maxLength={20}
             aria-label="Player name"
+            autoComplete="off"
           />
           <NeonButton onClick={add}>Add</NeonButton>
         </div>
