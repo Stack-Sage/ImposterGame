@@ -26,14 +26,16 @@ export default function RoomPage({ params }) {
 
   return (
     <PhaseWrapper>
-      <div className="flex flex-col items-center gap-8 w-full max-w-2xl mx-auto">
+      <div className="flex flex-col items-center gap-8 w-full max-w-2xl mx-auto" style={{ minHeight: "80vh" }}>
         <RoomCodeBox code={roomId} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
           {players.map((p, i) => (
             <PlayerCard key={i} name={p.name} score={p.score} />
           ))}
         </div>
-        <NeonButton>Start Round</NeonButton>
+        <NeonButton>
+          <span className="text-gray-900 text-xl">Start Round</span>
+        </NeonButton>
       </div>
     </PhaseWrapper>
   );

@@ -12,7 +12,6 @@ export default function PlayPage() {
   const [index, setIndex] = useState(0);
   const [showPass, setShowPass] = useState(true);
   const [revealed, setRevealed] = useState(false);
-  const [showAll, setShowAll] = useState(false);
   const [mode, setMode] = useState("word");
 
   useEffect(() => {
@@ -61,17 +60,18 @@ export default function PlayPage() {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass p-8 flex flex-col gap-8 items-center w-full max-w-xl mx-auto mt-8"
+      className="glass p-10 flex flex-col gap-12 items-center w-full max-w-xl mx-auto mt-12 mb-8"
+      style={{ minHeight: "80vh" }}
     >
-      <h2 className="h2 neon-text font-bold mb-2">Pass & Play</h2>
-      <div className="text-cyan-300 text-center mb-2 font-semibold">
+      <h2 className="h2 neon-text font-bold mb-4">Pass & Play</h2>
+      <div className="text-cyan-300 text-center mb-6 font-semibold">
         {mode === "word"
           ? "Guess the common word. Imposter has a different or odd word!"
           : "Answer the question. Imposter has a secret or odd question!"}
       </div>
-      <div className="w-full max-w-md">
-        <div className="glass p-6 rounded-lg flex flex-col gap-6">
-          <div className="text-sm text-sky-200/60">Turn {index + 1} of {list.length}</div>
+      <div className="w-full max-w-md mb-8">
+        <div className="glass p-8 rounded-lg flex flex-col gap-10">
+          <div className="text-sm text-sky-200/60 mb-2">Turn {index + 1} of {list.length}</div>
           {showPass ? (
             <PassScreen player={player.name} onContinue={() => setShowPass(false)} />
           ) : (
@@ -79,43 +79,28 @@ export default function PlayPage() {
               <div className="text-xs text-sky-300/70 mb-2">Secret for <span className="font-bold neon-text">{player.name}</span></div>
               <div className="h-24 w-full flex items-center justify-center rounded-xl bg-black/60 border-2 border-sky-500/20 shadow-lg">
                 <div className="text-center w-full">
-                  <div className="mt-2 text-2xl font-bold neon-text">{revealed ? player.prompt : "Tap reveal"}</div>
+                  <div className="mt-2 text-3xl md:text-4xl font-bold neon-text">{revealed ? player.prompt : "Tap reveal"}</div>
                 </div>
               </div>
               {!revealed ? (
-                <NeonButton onClick={() => setRevealed(true)}>Reveal</NeonButton>
+                <NeonButton
+                  onClick={() => setRevealed(true)}
+                  className="bg-gradient-to-r from-gray-800 to-gray-900 text-gray-100 rounded-md text-xl font-bold px-6 py-3 shadow-lg hover:scale-105 active:scale-95 transition-all"
+                >
+                  Reveal
+                </NeonButton>
               ) : (
-                <NeonButton onClick={next}>Done</NeonButton>
+                <NeonButton
+                  onClick={next}
+                  className="bg-gradient-to-r from-gray-800 to-gray-900 text-gray-100 rounded-md text-xl font-bold px-6 py-3 shadow-lg hover:scale-105 active:scale-95 transition-all"
+                >
+                  Done
+                </NeonButton>
               )}
             </motion.div>
           )}
         </div>
       </div>
-      <div className="w-full flex justify-end">
-        <NeonButton onClick={() => setShowAll((v) => !v)} type="button">
-          {showAll ? "Hide All Prompts" : "Show All Prompts"}
-        </NeonButton>
-      </div>
-      {showAll && (
-        <div className="mt-4 w-full max-h-96 overflow-y-auto text-xs bg-black/40 rounded-xl p-4 border border-cyan-700/20">
-          <div>
-            <span className="font-bold text-cyan-400">Sample Words:</span>
-            <span className="ml-2">{WORDS.slice(0, 50).join(", ")}...</span>
-          </div>
-          <div className="mt-2">
-            <span className="font-bold text-cyan-400">Sample Imposter Words:</span>
-            <span className="ml-2">{IMPOSTER_WORDS.slice(0, 30).join(", ")}...</span>
-          </div>
-          <div className="mt-2">
-            <span className="font-bold text-cyan-400">Sample Questions:</span>
-            <span className="ml-2">{QUESTIONS.slice(0, 30).join(", ")}...</span>
-          </div>
-          <div className="mt-2">
-            <span className="font-bold text-cyan-400">Sample Imposter Questions:</span>
-            <span className="ml-2">{IMPOSTER_QUESTIONS.slice(0, 30).join(", ")}...</span>
-          </div>
-        </div>
-      )}
     </motion.div>
   );
 }
