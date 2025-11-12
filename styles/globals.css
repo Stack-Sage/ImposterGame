@@ -2,51 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #0B0E11;
+  --bg-secondary: #12161C;
+  --accent-primary: #00BFFF;
+  --accent-secondary: #7B61FF;
+  --accent-gradient: linear-gradient(135deg, #00BFFF 0%, #7B61FF 100%);
+  --text-primary: #E6F1FF;
+  --text-secondary: #9CAEC9;
+  --text-tertiary: #65728A;
+  --success: #22D3A6;
+  --error: #FF4C4C;
+  --warning: #FFB400;
+  --card-border: rgba(0,191,255,0.2);
+}
+
 body {
-  background: linear-gradient(135deg, #1e293b 0%, #38bdf8 100%);
-  color: #f3f8ff;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'Poppins', 'Orbitron', ui-sans-serif, system-ui;
   min-height: 100vh;
 }
 
 .neon-text {
-  text-shadow: 0 0 8px #38bdf8, 0 0 2px #7dd3fc;
-  color: #e0f2fe;
+  color: var(--accent-primary);
+  text-shadow: 0 0 10px #00BFFF99, 0 0 2px #7B61FF66;
 }
 
 .glass {
-  background: linear-gradient(120deg, rgba(56,189,248,0.12), rgba(125,211,252,0.10));
-  border: 1px solid #38bdf844;
-  backdrop-filter: blur(8px);
-  border-radius: 18px;
+  background: linear-gradient(120deg, #12161Ccc, #1A1E24bb);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 15px #00BFFF11, 0 2px 8px #0B0E11cc;
 }
 
 .h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
   font-family: 'Orbitron', 'Poppins', ui-sans-serif;
-  color: #e0f2fe;
+  color: var(--accent-primary);
+  text-shadow: 0 0 18px #00BFFFaa, 0 0 4px #7B61FF99;
+  letter-spacing: 0.04em;
 }
 
 .h2 {
-  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
   font-family: 'Orbitron', 'Poppins', ui-sans-serif;
-  color: #bae6fd;
+  color: var(--accent-secondary);
+  text-shadow: 0 0 8px #7B61FF88;
+  letter-spacing: 0.03em;
 }
 
 input, button, textarea {
   outline: none;
 }
 
+input {
+  background: var(--bg-primary);
+  border: 1px solid #1A1E24;
+  border-radius: 1rem;
+  color: #E6F1FF;
+  padding: 0.75rem 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
 input:focus, button:focus, textarea:focus {
-  box-shadow: 0 0 0 2px #38bdf8cc;
-  border-color: #38bdf8;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px #00BFFF;
+}
+
+button {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background: #e0f2fe;
+  background: #12161C;
 }
 ::-webkit-scrollbar-thumb {
-  background: #38bdf888;
+  background: #00BFFF44;
   border-radius: 8px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
 }

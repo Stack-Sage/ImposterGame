@@ -2,16 +2,17 @@
 import React from "react";
 
 export default function PlayerCard({ name, score, avatarUrl }) {
+  const displayName = name || "Unknown";
   return (
-    <div className="glass flex flex-row items-center gap-6 p-5 rounded-2xl shadow-md hover:scale-105 transition-transform w-full bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40">
+    <div className="glass flex flex-row items-center gap-8 p-8 rounded-2xl shadow-md hover:scale-105 transition-transform w-full bg-gradient-to-r from-sky-900/40 via-cyan-900/40 to-blue-900/40">
       <img
-        src={avatarUrl || `https://api.dicebear.com/7.x/bottts/svg?seed=${name}`}
-        alt={name}
-        className="w-16 h-16 rounded-full border-4 border-cyan-400 shadow-lg"
+        src={avatarUrl || `https://api.dicebear.com/7.x/bottts/svg?seed=${displayName}`}
+        alt={displayName}
+        className="w-20 h-20 rounded-full border-4 border-cyan-400 shadow-lg"
       />
-      <div className="flex flex-col flex-1 min-w-0">
-        <span className="font-extrabold text-cyan-100 text-xl truncate">{name}</span>
-        <span className="text-lg text-cyan-300 mt-1">Score: <span className="font-bold">{score ?? 0}</span></span>
+      <div className="flex flex-col flex-1 min-w-0 gap-2">
+        <span className="font-extrabold text-cyan-100 text-2xl truncate">{displayName}</span>
+        <span className="text-xl text-cyan-300 mt-1">Score: <span className="font-bold">{score ?? 0}</span></span>
       </div>
     </div>
   );
