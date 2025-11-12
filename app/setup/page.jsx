@@ -44,26 +44,28 @@ export default function SetupPage() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="glass p-8 flex flex-col gap-8 items-center justify-center max-w-xl mx-auto"
-    >
-      <h2 className="h2 font-bold neon-text text-center mb-2">Add Players</h2>
-      <div className="flex gap-6 w-full justify-center">
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="flex-1 p-5 rounded-3xl bg-black/40 border border-sky-400/20 neon-text text-xl focus:outline-none focus:ring-4 focus:ring-sky-400"
-          placeholder="Player name"
-          maxLength={20}
-        />
-        <NeonButton onClick={add}>Add</NeonButton>
-      </div>
-      <PlayerList players={players} onRemove={remove} />
-      <div className="mt-8 flex justify-center w-full">
-        <NeonButton onClick={startRound}>Start Round</NeonButton>
-      </div>
-    </motion.div>
+    <div className="flex justify-center w-full min-h-screen items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="glass p-8 flex flex-col gap-8 items-center justify-center w-full max-w-lg mx-auto"
+      >
+        <h2 className="h2 font-bold neon-text text-center mb-2">Add Players</h2>
+        <div className="flex gap-6 w-full justify-center">
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="flex-1 p-5 rounded-3xl bg-black/40 border border-sky-400/20 neon-text text-xl focus:outline-none focus:ring-4 focus:ring-sky-400"
+            placeholder="Player name"
+            maxLength={20}
+          />
+          <NeonButton onClick={add}>Add</NeonButton>
+        </div>
+        <PlayerList players={players} onRemove={remove} />
+        <div className="mt-8 flex justify-center w-full">
+          <NeonButton onClick={startRound}>Start Round</NeonButton>
+        </div>
+      </motion.div>
+    </div>
   );
 }
